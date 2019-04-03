@@ -12,7 +12,7 @@ public class ModelBuilder<T extends Model, B extends ModelBuilder<T, B>> impleme
     }
 
 
-        public T build(final T model) {
+    public T build(final T model) {
         model.setId(getId());
         return null;
     }
