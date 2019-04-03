@@ -4,12 +4,14 @@ import com.butenko.vladyslav.foxconstructions.model.model.Model;
 import com.butenko.vladyslav.foxconstructions.model.order.Order;
 import com.butenko.vladyslav.foxconstructions.model.product.Product;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "sale_positions")
 @Data
+@EqualsAndHashCode(callSuper = false)
 public class SalePosition extends Model {
 
     @OneToOne(fetch = FetchType.EAGER)

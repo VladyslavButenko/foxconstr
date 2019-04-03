@@ -2,6 +2,7 @@ package com.butenko.vladyslav.foxconstructions.model.photo;
 
 import com.butenko.vladyslav.foxconstructions.model.model.Model;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,6 +11,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "photos")
 @Data
+@EqualsAndHashCode(callSuper = false)
 public class Photo extends Model {
 
     private static final String PATH = System.getenv("PROJECT_HOME") +
