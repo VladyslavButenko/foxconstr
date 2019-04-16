@@ -1,10 +1,11 @@
 package com.butenko.vladyslav.foxconstructions.model.model;
 
+import com.butenko.vladyslav.foxconstructions.util.generator.Generator;
+import com.butenko.vladyslav.foxconstructions.util.generator.StringGenerator;
 import lombok.Getter;
 
-public class ModelBuilder<T extends Model, B extends ModelBuilder<T, B>> implements Builder<T> {
+public abstract class ModelBuilder<T extends Model, B extends ModelBuilder<T, B>> implements Builder<T> {
 
-    @Getter
     private long id;
 
     protected ModelBuilder() {
@@ -17,8 +18,13 @@ public class ModelBuilder<T extends Model, B extends ModelBuilder<T, B>> impleme
         return null;
     }
 
-    @Override
-    public T build() {
-        return null;
+    public String generateRandomString() {
+        Generator<String> generator = new StringGenerator(8);
+        return generator.generate();
+    }
+
+
+    private long getId() {
+        return (this.id >= 0) ? this.id : 0;
     }
 }
