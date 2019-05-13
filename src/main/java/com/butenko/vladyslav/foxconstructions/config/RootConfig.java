@@ -2,7 +2,6 @@ package com.butenko.vladyslav.foxconstructions.config;
 
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
