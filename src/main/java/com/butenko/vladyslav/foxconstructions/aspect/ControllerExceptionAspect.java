@@ -13,9 +13,10 @@ public class ControllerExceptionAspect {
 
     //TODO add pointcut for controller
     @AfterThrowing(
-            throwing = "e"
+            pointcut = "execution(* com.butenko.vladyslav.foxconstructions..controller..*(..))",
+            throwing = "exception"
     )
-    public void afterThrowAdvice(Exception e) {
-        logger.error("EXCEPTION HAS BEEN THROWN! " + e.getClass());
+    public void afterThrowAdvice(Exception exception) {
+        logger.error("EXCEPTION HAS BEEN THROWN! " + exception.getClass());
     }
 }

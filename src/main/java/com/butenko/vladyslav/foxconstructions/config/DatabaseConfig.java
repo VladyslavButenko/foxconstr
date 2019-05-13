@@ -17,7 +17,7 @@ import javax.sql.DataSource;
 
 @Configuration
 @EnableTransactionManagement
-//@EnableJpaRepositories(basePackages = "com.butenko.vladyslav.foxconstructions.repository")
+@EnableJpaRepositories(basePackages = "com.butenko.vladyslav.foxconstructions.repository")
 @ComponentScan(basePackages = "com.butenko.vladyslav.foxconstructions.model")
 @PropertySource("classpath:database.properties")
 public class DatabaseConfig {
