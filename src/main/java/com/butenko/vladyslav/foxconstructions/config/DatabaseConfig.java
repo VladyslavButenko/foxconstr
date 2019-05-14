@@ -72,7 +72,7 @@ public class DatabaseConfig {
         return new JpaTransactionManager(factory);
     }
 
-    @Bean
+    @Bean(name="entityManagerFactory")
     public LocalContainerEntityManagerFactoryBean entityManagerFactoryBean(
             DataSource dataSource, HibernateJpaVendorAdapter jpaVendorAdapter) {
         LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
