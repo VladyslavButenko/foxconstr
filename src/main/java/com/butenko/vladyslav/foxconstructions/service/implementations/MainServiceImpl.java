@@ -19,6 +19,7 @@ public abstract class MainServiceImpl<T extends Model> implements MainService<T>
     }
 
     @Override
+    @Transactional
     public void add(T model) {
         if (isNotNull(model)) {
             this.repository.save(model);
@@ -35,6 +36,7 @@ public abstract class MainServiceImpl<T extends Model> implements MainService<T>
     }
 
     @Override
+    @Transactional
     public void update(T model) {
         if (isNotNull(model)) {
             add(model);
@@ -52,11 +54,13 @@ public abstract class MainServiceImpl<T extends Model> implements MainService<T>
     }
 
     @Override
+    @Transactional
     public Collection<T> getAll() {
         return this.repository.findAll();
     }
 
     @Override
+    @Transactional
     public void remove(T model) {
         if (isNotNull(model)) {
             this.repository.delete(model);
@@ -64,11 +68,14 @@ public abstract class MainServiceImpl<T extends Model> implements MainService<T>
     }
 
     @Override
+    @Transactional
     public void remove(long id) {
         this.repository.deleteById(id);
     }
 
     @Override
+    @Transactional
+
     public void remove(Collection<T> models) {
         if (isNotEmpty(models)) {
             this.repository.deleteAll(models);
@@ -76,6 +83,7 @@ public abstract class MainServiceImpl<T extends Model> implements MainService<T>
     }
 
     @Override
+    @Transactional
     public void removeAll() {
         this.repository.deleteAll();
     }

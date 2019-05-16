@@ -1,5 +1,7 @@
 package com.butenko.vladyslav.foxconstructions.util.validator;
 
+import antlr.StringUtils;
+
 import java.util.Collection;
 
 public class Validator {
@@ -19,5 +21,13 @@ public class Validator {
 
     public static boolean isNotEmpty(Collection collection) {
         return !isEmpty(collection);
+    }
+
+    public static boolean isEmpty(String string) {
+        return string.isEmpty();
+    }
+
+    public static boolean isNotEmpty(String string) {
+        return !string.isEmpty();
     }
 }
