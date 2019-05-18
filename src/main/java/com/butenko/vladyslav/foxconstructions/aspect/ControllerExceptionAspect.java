@@ -11,7 +11,6 @@ import org.springframework.stereotype.Component;
 public class ControllerExceptionAspect {
     private final Logger logger = LoggerFactory.getLogger(ControllerExceptionAspect.class);
 
-    //TODO add pointcut for controller
     @AfterThrowing(
             pointcut = "execution(* com.butenko.vladyslav.foxconstructions..controller..*(..))",
             throwing = "exception"
