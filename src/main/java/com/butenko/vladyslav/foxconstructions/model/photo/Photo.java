@@ -14,7 +14,7 @@ import javax.persistence.Table;
 @EqualsAndHashCode(callSuper = false)
 public class Photo extends Model {
 
-    private static final String PATH = System.getenv("PROJECT_HOME") +
+    public static final String PATH = System.getenv("PROJECT_HOME") +
             "/img";
 
     @Column(name = "title", nullable = false)

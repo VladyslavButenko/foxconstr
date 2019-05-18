@@ -1,6 +1,7 @@
 package com.butenko.vladyslav.foxconstructions.util.validator;
 
 import antlr.StringUtils;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.Collection;
 
@@ -29,5 +30,13 @@ public class Validator {
 
     public static boolean isNotEmpty(String string) {
         return !string.isEmpty();
+    }
+
+    public static boolean isEmpty(MultipartFile file){
+        return isNull(file) || file.isEmpty();
+    }
+
+    public static boolean isNotEmpty(MultipartFile file){
+        return !isEmpty(file);
     }
 }
